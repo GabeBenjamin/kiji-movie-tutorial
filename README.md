@@ -19,7 +19,7 @@ This should build and install JARs for the following:
 Next, create a temp directory to run everything and copy your Bento Box tarball there.  Then run the
 python script `workflow/manager.py`:
 ```
-python3 movie-advisor-tutorial/workflow/manager.py \
+python3 workflow/manager.py \
   --movie-advisor-home=../kiji-movie-tutorial \
   install-bento \
   import-user-info \
