@@ -41,6 +41,21 @@ This script will do the following:
 - Calculate item-item similarity
 - Register the score function
 
+> Alternatively, if you already have bento installed you can then run the python script using this and 
+> replacing `{BENTO_HOME}` with the location of where your bento is installed:
+> ```
+> python3 workflow/manager.py \
+>   --movie-advisor-home=../kiji-movie-tutorial \
+>   --bento-home={BENTO_HOME}
+>   import-user-info \
+>   create-tables \
+>   import-ratings \
+>   import-movie-info \
+>   train-item-item-cf \
+>   register-freshener \
+>   --kill-bento
+> ```
+
 Now you are ready to start the web app!  To do so, you need to have Clojure and its build system,
 Leiningen, installed.  If you are on a Mac, you can do `brew install leiningen` (That will
 install Clojure and Leiningen).  Now you can start the website:
