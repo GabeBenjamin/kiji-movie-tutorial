@@ -4,11 +4,9 @@ recommendation service, MovieAdvisor.
 How to run
 ==========
 
-(We assume below that you can cloned the repository into a directory `movie-advisor-repository`.)
-
 Start by building all of the submodules in Maven:
 ```
-cd movie-advisor-tutorial
+cd kiji-movie-tutorial
 mvn clean install
 ```
 This should build and install JARs for the following:
@@ -19,10 +17,10 @@ This should build and install JARs for the following:
 - Score function for calculating top-N next movies for a given user
 
 Next, create a temp directory to run everything and copy your Bento Box tarball there.  Then run the
-python script `movie-advisor-tutorial/workflow/manager.py`:
+python script `workflow/manager.py`:
 ```
 python3 movie-advisor-tutorial/workflow/manager.py \
-  --movie-advisor-home=movie-advisor-tutorial \
+  --movie-advisor-home=../kiji-movie-tutorial \
   install-bento \
   import-user-info \
   create-tables \
@@ -44,10 +42,10 @@ This script will do the following:
 - Register the score function
 
 Now you are ready to start the web app!  To do so, you need to have Clojure and its build system,
-Leiningen, installed.  If you are on a Mac, you can do `brew install clojure` (I think that will
+Leiningen, installed.  If you are on a Mac, you can do `brew install leiningen` (That will
 install Clojure and Leiningen).  Now you can start the website:
 ```
-cd movie-advisor-tutorial/web-app
+cd web-app
 lein ring server
 ```
 Running this command should automatically open up the site in your web browser.
